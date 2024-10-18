@@ -2,13 +2,11 @@
 
 class Pays {
     private string $nom;
-    private array $equipes;
-    private array $joueurs;
+    private $equipes = [];
+
 
     public function __construct(string $nom){
         $this->nom = $nom;
-       $this->equipes = [];
-       $this->joueurs = [];
     }
 
 
@@ -24,42 +22,19 @@ class Pays {
         return $this;
     }
 
-    public function getEquipes()
-    {
-        return $this->equipes;
+    public function ajouterEquipe($equipe, $anneeDebut){
+        $this -> equipes[] = ['equipe' => $equipe, 'anneeDebut'=> $anneeDebut];
     }
 
+    public function afficherEquipes(){
+        $resultat  = "<h3> {$this} </h3>"; 
 
-    public function setEquipes(array $equipes)
-    {
-        $this->equipes = $equipes;
-
-        return $this;
+    foreach($this -> equipes as $equipe){
+        $resultat .= $equipe['equipe'] . "<br>";
     }
-    public function getJoueurs()
-    {
-        return $this->joueurs;
-    }
+    return $resultat ;
+   }
 
-    public function setJoueurs(array $joueurs)
-    {
-        $this->joueurs = $joueurs;
-
-        return $this;
-    }
-   
-    public function afficherEquipes(): string {
-        $resultat  = "<h2> Liste les équipes d'un PAYS : <br> $this </h2>";
-
-        if (empty($this->equipes)) {
-            $resultat .= "Aucune équipe disponible.<br>";
-        } else {
-            foreach ($this->equipes as $equipe) {
-                $resultat .= $equipe->getNom() . "<br>";
-            }
-        }
-        return $resultat ;
-       }
 
 
 public function __toString()
@@ -67,4 +42,7 @@ public function __toString()
     return $this->getNom();
 }
    
+
+  
+
 }

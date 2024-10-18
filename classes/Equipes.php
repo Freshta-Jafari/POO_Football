@@ -2,11 +2,13 @@
 
 class Equipes {
     private string $nom;
+    private DateTime $date;
     private Pays $pays;
     private $joueurs = [];
 
-    public function __construct(string $nom, Pays $pays) {
+    public function __construct(string $nom, string $date, Pays $pays) {
         $this->nom = $nom;
+        $this->date = new DateTime($date);
         $this->pays = $pays;
     }
 
@@ -18,6 +20,17 @@ class Equipes {
     public function setNom($nom)
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+    public function getDate()
+    {
+        return $this->date->format('Y');
+    }
+
+    public function setDate($date)
+    {
+        $this->date = $date;
 
         return $this;
     }
@@ -51,7 +64,8 @@ class Equipes {
     }
     
     public function afficherJoueurs(){
-        $resultat  = "<h2> Liste les joueurs de chaque équipe : <br> {$this->nom} </h2>";
+        $resultat  = "<h3> {$this->nom} </h3>";
+        $resultat .= "<h4> {$this->getPays()} {$this->getDate()} </h4>" ;
 
         foreach ($this -> joueurs as $joueurInfo ){
             $resultat  .= $joueurInfo['joueur'] . "(" . $joueurInfo['anneeDebut'] . ") <br>";
@@ -64,4 +78,7 @@ class Equipes {
         return $this->nom;
     }
 
+
+    
+   
 }

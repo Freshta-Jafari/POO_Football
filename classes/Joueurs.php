@@ -74,7 +74,8 @@ class Joueurs {
     }
  
    public function afficherEquipes(){
-        $resultat  = "<h2> Liste la carrière d'un joueur : <br> $this </h2>"; 
+        $resultat  = "<h3> $this </h3>"; 
+        $resultat .= "<h4> {$this->getPays()} {$this->age()} </h4>";
 
     foreach($this -> equipes as $equipe){
         $resultat .= $equipe['joueur'] . " (" . $equipe['anneeDebut'] . ") <br>";
