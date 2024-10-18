@@ -1,10 +1,10 @@
 <?php
 
-class Equipes {
+class Equipe {
     private string $nom;
     private DateTime $date;
     private Pays $pays;
-    private $joueurs = [];
+    private array $joueurs = [];
 
     public function __construct(string $nom, string $date, Pays $pays) {
         $this->nom = $nom;
@@ -65,7 +65,7 @@ class Equipes {
     
     public function afficherJoueurs(){
         $resultat  = "<h3> {$this->nom} </h3>";
-        $resultat .= "<h4> {$this->getPays()} {$this->getDate()} </h4>" ;
+        $resultat .= "<h6> {$this->getPays()} {$this->getDate()} </h6>" ;
 
         foreach ($this -> joueurs as $joueurInfo ){
             $resultat  .= $joueurInfo['joueur'] . "(" . $joueurInfo['anneeDebut'] . ") <br>";

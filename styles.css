@@ -1,0 +1,79 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.section-pays{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-pays{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #cf5252;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+
+}
+.section-equipes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-equipes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #3e4ee2;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+
+}
+.section-joueurs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.card-joueurs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #2b920c;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+
+}

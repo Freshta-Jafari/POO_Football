@@ -1,11 +1,11 @@
 <?php
 
-class Joueurs {
+class Joueur {
     private string $nom;
     private string $prenom;
     private DateTime $dateNaissance;
     private Pays $pays;
-    private $equipes = [];
+    private array $equipes = [];
     
 
     public function  __construct(string $nom, string $prenom, string $dateNaissance, Pays $pays){
